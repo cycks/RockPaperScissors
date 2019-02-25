@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="Google Homepage">
+        <meta name="keywords" content="HTML,CSS,Google,Homepage">
+        <meta name="author" content="sikolia Wycliffe">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
+        <title>Rock-Paper-Scissors</title>
+        <script type="text/javascript">
+            var playerSelection = prompt("Please enter rock, paper, or scissors");
+            let possibleChoices = ["rock", "paper", "scissors"];
+            let computerSelection = possibleChoices[Math.floor(Math.random() * possibleChoices.length)];
+            
+            let validInput = function(playerSelection){
+                if (possibleChoices.indexOf(playerSelection) > -1){
+                    return playerSelection;
+                }else{
+                    return false;
+                }
+            };
+
+
+            let singleRound = function (playerSelection, computerSelection) {
+                var playerSelection = playerSelection.toLowerCase();
+                let playerWins = "Player Wins! You selected " + playerSelection + " I selected " + computerSelection;
+                let computerWins = "I win! I selected " + computerSelection + " you selected " + playerSelection;
+                let tie = "We have a tie. We both selected " + playerSelection;
+
+                if (playerSelection != computerSelection) {
+                    switch (playerSelection) {
+                        case  "paper":
+                            if (computerSelection == "scissors") {
+                            var result = computerWins
+                           } else {
+                            var result = playerWins
+                           };
+                            break;
+                        case "rock":
+                           if (computerSelection == "scissors") {
+                            var result = playerWins
+                           } else {
+                            var result = computerWins
+                           };
+                            break;
+                        case "scissors":
+                            if (computerSelection == "paper") {
+                            var result = playerWins
+                           } else {
+                            var result = computerWins
+                           };
+                            break;
+                    }
+                } else {
+                    result = tie
+                }
+                
+                    return result
+            };
+
+            console.log(singleRound(playerSelection, computerSelection));
+        </script>
+    </head>
+
+    <body class="full-height">
+        
+    </body>
+</html>
