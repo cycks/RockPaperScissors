@@ -10,18 +10,6 @@
         <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
         <title>Rock-Paper-Scissors</title>
         <script type="text/javascript">
-            var playerSelection = prompt("Please enter rock, paper, or scissors");
-            let possibleChoices = ["rock", "paper", "scissors"];
-            let computerSelection = possibleChoices[Math.floor(Math.random() * possibleChoices.length)];
-            
-            let validInput = function(playerSelection){
-                if (possibleChoices.indexOf(playerSelection) > -1){
-                    return playerSelection;
-                }else{
-                    return false;
-                }
-            };
-
 
             let singleRound = function (playerSelection, computerSelection) {
                 var playerSelection = playerSelection.toLowerCase();
@@ -60,7 +48,50 @@
                     return result
             };
 
-            console.log(singleRound(playerSelection, computerSelection));
+            let getInput = function(){
+                while(true){
+                   var playerSelection = prompt("Please enter rock, paper, or scissors");
+                   if(playerSelection === "rock" || playerSelection === "paper" || playerSelection === "scissors"){
+                       return playerSelection
+                   }
+                   else {
+                       return prompt("WRONG INPUT! Please enter rock, paper, or scissors");
+                   }
+                }
+            }
+
+
+            let game = function(){
+                var step;
+                var playerScore = 0;
+                var computerScore = 0;
+                for (step = 0; step < 5; step++) {
+                    // Runs 5 times, with values of step 0 through 4.
+                    var playerSelection = getInput();
+                    let possibleChoices = ["rock", "paper", "scissors"];
+                    let computerSelection = possibleChoices[Math.floor(Math.random() * possibleChoices.length)];
+
+                    var outcome = singleRound(playerSelection, computerSelection);
+
+                    if (outcome.startsWith("Player")) {
+                        // alert("Player wins")
+                        playerScore += 1
+                    } else if (outcome.startsWith("I win!")){
+                        computerScore += 1
+                    }else{
+                        // Python's equivalent of pass
+                    }
+                    var outcome = ""
+                }    
+                if (playerScore > computerScore) {
+                    var final = "Player wins with a score of " + playerScore + " against computer " + computerScore
+                } else {
+                    var final = "Computer wins with a score of " + computerScore + " against player " + playerScore
+                } 
+                return final                    
+            }
+            console.log(game())
+            // console.log(singleRound(playerSelection, computerSelection));
         </script>
     </head>
 
