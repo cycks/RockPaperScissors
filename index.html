@@ -3,11 +3,11 @@
 
     <head>
         <meta charset="UTF-8">
-        <meta name="description" content="Google Homepage">
-        <meta name="keywords" content="HTML,CSS,Google,Homepage">
-        <meta name="author" content="sikolia Wycliffe">
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
+        <!-- <meta name="description" content="Rock-Paper-Scissors">
+        <meta name="keywords" content="HTML,CSS,Rock-Paper-Scissors,Game">
+        <meta name="author" content="Sikolia Wycliffe">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
+        <link rel="stylesheet" type="text/css" href="style.css">
         <title>Rock-Paper-Scissors</title>
         <script type="text/javascript">
 
@@ -55,7 +55,8 @@
                        return playerSelection
                    }
                    else {
-                       return prompt("WRONG INPUT! Please enter rock, paper, or scissors");
+                       prompt("WRONG INPUT! Please enter rock, paper, or scissors");
+                       return false
                    }
                 }
             }
@@ -90,12 +91,60 @@
                 } 
                 return final                    
             }
-            console.log(game())
             // console.log(singleRound(playerSelection, computerSelection));
         </script>
     </head>
 
-    <body class="full-height">
+    <body >
+        <header class="header">
+            <h2 class="center-text">
+                Welcome! Have Fun Playing Rock Paper Scissors
+            </h2>
+        </header>
+        <div class = "playGround">
+            <div class="row">
+                <button class = "button buttonOne">
+                    Click on rock paper or scissors below
+                </button>
+                <button class = "button buttonTwo">
+                    Computers choice rock paper or scissors
+                </button>
+
+                    
+            </div>
+            <div class="rowTwo">
+                    <ol class = "playTools playerIcons">
+                        <li>
+                            <img class="pics" src="images/rock.png" alt="Rock">
+                        </li>
+
+                        <li>
+                            <img class="pics" src="images/paper.png" alt="Paper">
+                        </li>
+
+                        <li>
+                            <img class="pics lastItem" src="images/scissors.png" alt="Scissors">
+                        </li>
+                    </ol>
+                    <ol class = "playTools computerIcons">
+                        <li>
+                            <img class="pics" src="images/rock.png" alt="Rock">
+                        </li>
+
+                        <li>
+                            <img class="pics" src="images/paper.png" alt="Paper">
+                        </li>
+
+                        <li>
+                            <img class="pics lastItem" src="images/scissors.png" alt="Scissors">
+                        </li>
+                    </ol>
+            </div>
+         </div>
+        <div class = "result">
+
+        </div>
+        
         
     </body>
 </html>
