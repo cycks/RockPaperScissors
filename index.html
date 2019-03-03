@@ -3,10 +3,10 @@
 
     <head>
         <meta charset="UTF-8">
-        <!-- <meta name="description" content="Rock-Paper-Scissors">
+        <meta name="description" content="Rock-Paper-Scissors">
         <meta name="keywords" content="HTML,CSS,Rock-Paper-Scissors,Game">
         <meta name="author" content="Sikolia Wycliffe">
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="style.css">
         <title>Rock-Paper-Scissors</title>
         <script type="text/javascript">
@@ -49,6 +49,7 @@
             };
 
             let getInput = function(){
+                playerSelection = document.getElementById("theButton").onclick();
                 while(true){
                    var playerSelection = prompt("Please enter rock, paper, or scissors");
                    if(playerSelection === "rock" || playerSelection === "paper" || playerSelection === "scissors"){
@@ -61,6 +62,9 @@
                 }
             }
 
+            let game1 = function(clicked){
+                alert(clicked)
+            }
 
             let game = function(){
                 var step;
@@ -102,43 +106,47 @@
             </h2>
         </header>
         <div class = "playGround">
-            <div class="row">
-                <button class = "button buttonOne">
-                    Click on rock paper or scissors below
-                </button>
-                <button class = "button buttonTwo">
-                    Computers choice rock paper or scissors
-                </button>
+            <div class="column">
+                <div class="row">
+                    <button class = "button buttonOne">
+                        Click on rock paper or scissors below
+                    </button>
+                    <div class="rowTwo">
+                        <ol class = "playTools playerIcons">
+                            <li >
+                                <img class="pics" id = "rock" onclick="game1(this.id)" src="images/rock.png" alt="Rock">
+                            </li>
 
-                    
-            </div>
-            <div class="rowTwo">
-                    <ol class = "playTools playerIcons">
-                        <li>
-                            <img class="pics" src="images/rock.png" alt="Rock">
-                        </li>
+                            <li >
+                                <img class="pics" id = "paper" onclick="game1(this.id)" src="images/paper.png" alt="Paper">
+                            </li>
 
-                        <li>
-                            <img class="pics" src="images/paper.png" alt="Paper">
-                        </li>
+                            <li >
+                                <img class="pics lastItem" id = "scissors" onclick="game1(this.id)" src="images/scissors.png" alt="Scissors">
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="row">
+                    <button class = "button buttonTwo">
+                        Computers choice rock paper or scissors
+                    </button>
+                    <div class="rowTwo">
+                        <ol class = "playTools playerIcons">
+                            <li >
+                                <img class="pics" id = "rock" onclick="game1(this.id)" src="images/rock.png" alt="Rock">
+                            </li>
 
-                        <li>
-                            <img class="pics lastItem" src="images/scissors.png" alt="Scissors">
-                        </li>
-                    </ol>
-                    <ol class = "playTools computerIcons">
-                        <li>
-                            <img class="pics" src="images/rock.png" alt="Rock">
-                        </li>
+                            <li >
+                                <img class="pics" id = "paper" onclick="game1(this.id)" src="images/paper.png" alt="Paper">
+                            </li>
 
-                        <li>
-                            <img class="pics" src="images/paper.png" alt="Paper">
-                        </li>
-
-                        <li>
-                            <img class="pics lastItem" src="images/scissors.png" alt="Scissors">
-                        </li>
-                    </ol>
+                            <li >
+                                <img class="pics lastItem" id = "scissors" onclick="game1(this.id)" src="images/scissors.png" alt="Scissors">
+                            </li>
+                        </ol>
+                    </div>
+                </div>
             </div>
          </div>
         <div class = "result">
