@@ -44,9 +44,6 @@ body {
 
 .playTools{
   list-style-type: none;
-  /* padding: 3% 5% 3% 5%; */
-  /* width: 40em; */
-  /* margin-left: 2%; */
 }
 
 .playTools li{
@@ -58,6 +55,11 @@ body {
 .playerIcons{
    float:left;
  }
+
+.pics.playerPic:hover {
+   border: 2px solid #000000;
+}
+
  .computerIcons{
   float:right;
   margin-right: auto; 
@@ -67,12 +69,10 @@ body {
 }
 .rowTwo{
   margin: 2em 0 0 0;
-  /* display: inline-flex; */
-  /* width: auto; */
 }
 
 /*
-
+Create columns
 *****************************************
 */
 
@@ -82,11 +82,52 @@ body {
   height: auto;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: auto;
-  margin: 0 2em 0 2em;
+  margin: 2em 2em 0 2em;
   width: 1200px;
 }
-
+/* Uncomment the code below when debugging*/
 /*.column > div {
   border: 1px solid green;
   background-color: lime;
 }*/
+
+
+
+/*
+Style the trophy
+************************************************************
+*/
+.trophyPic{
+  display: block;
+  height: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+}
+.congrats{
+  color: bisque;
+  font-size: x-large;
+  text-align: -webkit-center;
+}
+.score{
+  color: bisque;
+  font-size: xx-large;
+  line-height: 1.6;
+  padding: 2em 0 0 0;
+}
+.playAgain{
+  background-color: bisque;
+  border-radius: 10px;
+  height: 3em;
+  width: 15em;
+}
+
+/***************************************************************
+
+Style the result of every round
+***************************************************************/
+.roundResult{
+  color: white;
+  font-size: -webkit-xxx-large;
+  text-align: center;
+}
