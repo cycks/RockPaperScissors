@@ -41,13 +41,59 @@
 
     let findRoundWinner = function(playerScore, computerScore){
         if (playerScore > computerScore) {
-            var final = "Player wins with a score of " + playerScore + " against computer " + computerScore
-        } else if (playerScore > computerScore){
-            var final = "Computer wins with a score of " + computerScore + " against player " + playerScore
+            console.log("Player wins")
+            // Declare the html to replace in the right and left columns
+            let leftColumn = `<div class = "trophy">
+                        <img class="trophyPic" src="images/trophy1.png" alt="Rock">
+                    </div>`
+            let rightColumn = `<div class="score">
+                        <p> Hurray!! You Win. 
+                            After Five Rounds <br>
+                            Your Score was 3 and 
+                            my score was 2                       
+                    </div>
+                     <button class = "playAgain">
+                        Play Again
+                    </button>`
+            // **************************End of declaration******************************
+            document.getElementsByClassName("leftColumn").innerHTML = leftColumn
+            document.getElementsByClassName("rightColumn").innerHTML = rightColumn
+        } else if (playerScore < computerScore){
+            console.log("Computer wins")
+            let leftColumn = `<div class = "trophy">
+                        <img class="trophyPic" src="images/trophy1.png" alt="Rock">
+                    </div>`
+            let rightColumn = `<div class="score">
+                        <p> Hurray!! You Win. 
+                            After Five Rounds <br>
+                            Your Score was 3 and 
+                            my score was 2                      
+                    </div>
+                     <button class = "playAgain">
+                        Play Again
+                    </button>`
+            // **************************End of declaration******************************
+            document.getElementsByClassName("leftColumn").innerHTML = leftColumn
+            document.getElementsByClassName("rightColumn").innerHTML = rightColumn
         } else{
-            var final = "We have a tie. We both scored " + playerScore
+            console.log("Draw")
+            let leftColumn = `<div class = "trophy">
+                        <img class="trophyPic" src="images/trophy1.png" alt="Rock">
+                    </div>`
+            let rightColumn = `<div class="score">
+                        <p> Hurray!! You Win.
+                            After Five Rounds <br>
+                            Your Score was 3 and 
+                            my score was 2                      
+                    </div>
+                     <button class = "playAgain">
+                        Play Again
+                    </button>`
+            // **************************End of declaration******************************
+            document.getElementsByClassName("leftColumn").innerHTML = leftColumn
+            document.getElementsByClassName("rightColumn").innerHTML = rightColumn
         }
-        return final
+        
     }
 
     let increaseScore = function(roundScore){
@@ -58,19 +104,21 @@
             }else{
                 // Python's equivalent of pass
             }
+        rounds += 1
     }
-
 
     let getInput = function(){                
         let playerSelection = event.srcElement.id
         let possibleChoices = ["rock", "paper", "scissors"];
         let computerSelection = possibleChoices[Math.floor(Math.random() * possibleChoices.length)];
         let roundScore = PlaySingleRound(playerSelection, computerSelection);
+        console.log(roundScore)
         increaseScore(roundScore)
         
-        
-        rounds += 1
-        // if (rounds == 5){
+        if (rounds == 5) {
+            findRoundWinner(playerScore, computerScore)
 
-        // }
+        } else {
+            // pythons equivalent of pass
+        }
     }

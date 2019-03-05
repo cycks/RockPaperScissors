@@ -9,6 +9,14 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="style.css">
         <title>Rock-Paper-Scissors</title>
+
+        <!-- Load React API -->
+        <script src= "https://unpkg.com/react@16/umd/react.production.min.js"></script>
+        <!-- Load React DOM-->
+        <script src= "https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+        <!-- Load Babel Compiler -->
+        <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+
         <script type="text/javascript" src= "main.js"></script>
     </head>
 
@@ -20,24 +28,26 @@
         </header>
         <div class = "playGround">
             <div class="column">
-                <div class="row rightColumn">
-                    <button class = "button buttonOne">
-                        Click on rock paper or scissors below
-                    </button>
-                    <div class="rowTwo">
-                        <ol class = "playTools playerIcons">
-                            <li >
-                                <img class="pics playerPic" id = "rock" onclick="getInput()" src="images/rock.png" alt="Rock">
-                            </li>
+                <div class="row leftColumn">
+                    <div class="playing">
+                        <button class = "button buttonOne">
+                            Click on rock paper or scissors below
+                        </button>
+                        <div class="rowTwo">
+                            <ol class = "playTools playerIcons">
+                                <li >
+                                    <img class="pics playerPic" id = "rock" onclick="getInput()" src="images/rock.png" alt="Rock">
+                                </li>
 
-                            <li >
-                                <img class="pics playerPic" id = "paper" onclick="getInput()" src="images/paper.png" alt="Paper">
-                            </li>
+                                <li >
+                                    <img class="pics playerPic" id = "paper" onclick="getInput()" src="images/paper.png" alt="Paper">
+                                </li>
 
-                            <li >
-                                <img class="pics playerPic lastItem" id = "scissors" onclick="getInput()" src="images/scissors.png" alt="Scissors">
-                            </li>
-                        </ol>
+                                <li >
+                                    <img class="pics playerPic lastItem" id = "scissors" onclick="getInput()" src="images/scissors.png" alt="Scissors">
+                                </li>
+                            </ol>
+                        </div>
                     </div>
                     <!-- ********************************************************************
 
@@ -51,7 +61,7 @@
                     End of result in first column
                      -->
                 </div>
-                <div class="row leftColumn">
+                <div class="row rightColumn">
                     <button class = "button buttonTwo">
                         Computers choice rock paper or scissors
                     </button>
