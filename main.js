@@ -31,8 +31,8 @@
         } else {
             result = tie
         }
-        
-            return result
+        alert(result);
+        return result
     };
 
     let playerScore = 0;
@@ -41,57 +41,55 @@
 
     let findRoundWinner = function(playerScore, computerScore){
         if (playerScore > computerScore) {
-            console.log("Player wins")
+            alert("Player wins: computer score " + computerScore + " against player score: " + playerScore)
             // Declare the html to replace in the right and left columns
-            let leftColumn = `<div class = "trophy">
-                        <img class="trophyPic" src="images/trophy1.png" alt="Rock">
-                    </div>`
-            let rightColumn = `<div class="score">
-                        <p> Hurray!! You Win. 
-                            After Five Rounds <br>
-                            Your Score was 3 and 
-                            my score was 2                       
-                    </div>
-                     <button class = "playAgain">
-                        Play Again
-                    </button>`
             // **************************End of declaration******************************
-            document.getElementsByClassName("leftColumn").innerHTML = leftColumn
-            document.getElementsByClassName("rightColumn").innerHTML = rightColumn
+            // let replacedLeftColumn = document.getElementsByClassName("leftColumn");
+            // let replacedRightColumn = document.getElementsByClassName("rightColumn");
+
+            // replacedLeftColumn.innerHTML = '<div class = \"trophy">' +
+            //                                     '<img class=\"trophyPic" src=\"images/trophy1.png" alt=\"Rock">' +
+            //                                 '</div>'
+            
+            // replacedRightColumn.innerHTML = '<div class=\"score">' + 
+            //                                     '<p> Hurray!! You Win. After Five Rounds <br>' +
+            //                                     'Your Score was 3 and my score was 2' +
+            //                                 '</div>' + 
+            //                                 '<button class = \"playAgain">' +
+            //                                     'Play Again' +
+            //                                 '</button>'
         } else if (playerScore < computerScore){
-            console.log("Computer wins")
-            let leftColumn = `<div class = "trophy">
-                        <img class="trophyPic" src="images/trophy1.png" alt="Rock">
-                    </div>`
-            let rightColumn = `<div class="score">
-                        <p> Hurray!! You Win. 
-                            After Five Rounds <br>
-                            Your Score was 3 and 
-                            my score was 2                      
-                    </div>
-                     <button class = "playAgain">
-                        Play Again
-                    </button>`
+            alert("Computer wins: computer score " + computerScore + " against player score: " + playerScore)
             // **************************End of declaration******************************
-            document.getElementsByClassName("leftColumn").innerHTML = leftColumn
-            document.getElementsByClassName("rightColumn").innerHTML = rightColumn
+            // let replacedLeftColumn = document.getElementsByClassName("leftColumn");
+            // let replacedRightColumn = document.getElementsByClassName("rightColumn");
+
+            // replacedLeftColumn.innerHTML = '<div class = \"trophy">' +
+            //                                     '<img class=\"trophyPic" src=\"images/trophy1.png" alt=\"Rock">' +
+            //                                 '</div>'
+            // replacedRightColumn.innerHTML = '<div class=\"score">' + 
+            //                                     '<p> Hurray!! You Win. After Five Rounds <br>' +
+            //                                     'Your Score was 3 and my score was 2' +
+            //                                 '</div>' + 
+            //                                 '<button class = \"playAgain">' +
+            //                                     'Play Again' +
+            //                                 '</button>'
         } else{
-            console.log("Draw")
-            let leftColumn = `<div class = "trophy">
-                        <img class="trophyPic" src="images/trophy1.png" alt="Rock">
-                    </div>`
-            let rightColumn = `<div class="score">
-                        <p> Hurray!! You Win.
-                            After Five Rounds <br>
-                            Your Score was 3 and 
-                            my score was 2                      
-                    </div>
-                     <button class = "playAgain">
-                        Play Again
-                    </button>`
+            alert("Draw: computer score " + computerScore + " against player score: " + playerScore)
             // **************************End of declaration******************************
-            document.getElementsByClassName("leftColumn").innerHTML = leftColumn
-            document.getElementsByClassName("rightColumn").innerHTML = rightColumn
+            // let replacedLeftColumn = document.getElementsByClassName("leftColumn");
+            // let replacedRightColumn = document.getElementsByClassName("rightColumn");
+
+            // replacedLeftColumn.innerHTML = '<div class = \"trophy">' +
+            //                                     '<img class=\"trophyPic" src=\"images/trophy1.png" alt=\"Rock">' +
+            //                                 '</div>'
+            // replacedRightColumn.innerHTML = '<div class=\"score">' + 
+            //                                     '<p> Hurray!! You Win. After Five Rounds <br>' +
+            //                                     'Your Score was 3 and my score was 2' +
+            //                                 '</div>' + 
+            //                                 '<button class = \"playAgain">' +
+            //                                     'Play Again' +
+            //                                 '</button>'
         }
         
     }
@@ -112,7 +110,6 @@
         let possibleChoices = ["rock", "paper", "scissors"];
         let computerSelection = possibleChoices[Math.floor(Math.random() * possibleChoices.length)];
         let roundScore = PlaySingleRound(playerSelection, computerSelection);
-        console.log(roundScore)
         increaseScore(roundScore)
         
         if (rounds == 5) {
