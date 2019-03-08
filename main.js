@@ -31,7 +31,7 @@
         } else {
             result = tie
         }
-        alert(result);
+        document.getElementsByClassName("result")[0].innerHTML = result;
         return result
     };
 
@@ -40,56 +40,27 @@
     let rounds = 0;
 
     let findRoundWinner = function(playerScore, computerScore){
+        document.getElementsByClassName("playing")[0].style.display = "none";
+        document.getElementsByClassName("playing1")[0].style.display = "none";
+        document.getElementsByClassName("playing2")[0].style.display = "none";
+        let playerWins = "Player wins. After " + rounds + " rounds player scored " + playerScore +
+                        " and computer scored " +computerScore;
+        let computerWins = "Computer wins. After " + rounds + " rounds player scored " + playerScore +
+                        " and computer scored " +computerScore;
+        let noWinner = "We have a tie. After " + rounds + " rounds player scored " + playerScore +
+                        " and computer scored " +computerScore;
         if (playerScore > computerScore) {
-            alert("Player wins: computer score " + computerScore + " against player score: " + playerScore)
-            // Declare the html to replace in the right and left columns
-            // **************************End of declaration******************************
-            // let replacedLeftColumn = document.getElementsByClassName("leftColumn");
-            // let replacedRightColumn = document.getElementsByClassName("rightColumn");
-
-            // replacedLeftColumn.innerHTML = '<div class = \"trophy">' +
-            //                                     '<img class=\"trophyPic" src=\"images/trophy1.png" alt=\"Rock">' +
-            //                                 '</div>'
+            document.getElementsByClassName("playerWins")[0].style.display = "grid";
+            document.getElementById("displayPlayerScore").innerHTML = playerWins
             
-            // replacedRightColumn.innerHTML = '<div class=\"score">' + 
-            //                                     '<p> Hurray!! You Win. After Five Rounds <br>' +
-            //                                     'Your Score was 3 and my score was 2' +
-            //                                 '</div>' + 
-            //                                 '<button class = \"playAgain">' +
-            //                                     'Play Again' +
-            //                                 '</button>'
         } else if (playerScore < computerScore){
-            alert("Computer wins: computer score " + computerScore + " against player score: " + playerScore)
-            // **************************End of declaration******************************
-            // let replacedLeftColumn = document.getElementsByClassName("leftColumn");
-            // let replacedRightColumn = document.getElementsByClassName("rightColumn");
-
-            // replacedLeftColumn.innerHTML = '<div class = \"trophy">' +
-            //                                     '<img class=\"trophyPic" src=\"images/trophy1.png" alt=\"Rock">' +
-            //                                 '</div>'
-            // replacedRightColumn.innerHTML = '<div class=\"score">' + 
-            //                                     '<p> Hurray!! You Win. After Five Rounds <br>' +
-            //                                     'Your Score was 3 and my score was 2' +
-            //                                 '</div>' + 
-            //                                 '<button class = \"playAgain">' +
-            //                                     'Play Again' +
-            //                                 '</button>'
+            // alert("Computer wins: computer score " + computerScore + " against player score: " + playerScore);
+            document.getElementsByClassName("computerWins")[0].style.display = "grid";
+            document.getElementById("displayComputerScore").innerHTML = computerWins
         } else{
-            alert("Draw: computer score " + computerScore + " against player score: " + playerScore)
-            // **************************End of declaration******************************
-            // let replacedLeftColumn = document.getElementsByClassName("leftColumn");
-            // let replacedRightColumn = document.getElementsByClassName("rightColumn");
-
-            // replacedLeftColumn.innerHTML = '<div class = \"trophy">' +
-            //                                     '<img class=\"trophyPic" src=\"images/trophy1.png" alt=\"Rock">' +
-            //                                 '</div>'
-            // replacedRightColumn.innerHTML = '<div class=\"score">' + 
-            //                                     '<p> Hurray!! You Win. After Five Rounds <br>' +
-            //                                     'Your Score was 3 and my score was 2' +
-            //                                 '</div>' + 
-            //                                 '<button class = \"playAgain">' +
-            //                                     'Play Again' +
-            //                                 '</button>'
+            // alert("Draw: computer score " + computerScore + " against player score: " + playerScore)
+            document.getElementsByClassName("noWinner")[0].style.display = "grid";
+            document.getElementById("displayDrawScore").innerHTML = noWinner;
         }
         
     }

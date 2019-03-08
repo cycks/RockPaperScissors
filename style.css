@@ -98,11 +98,13 @@ Style the trophy
 ************************************************************
 */
 .trophyPic{
-  display: block;
   height: 50%;
   margin-left: auto;
   margin-right: auto;
   width: 60%;
+}
+.drawPic{
+  margin: 3em 0 0 8em;
 }
 .congrats{
   color: bisque;
@@ -120,6 +122,15 @@ Style the trophy
   border-radius: 10px;
   height: 3em;
   width: 15em;
+}
+.playerWins{
+  display: none;
+}
+.computerWins{
+  display: none;
+}
+.noWinner{
+  display: none;
 }
 
 /***************************************************************
