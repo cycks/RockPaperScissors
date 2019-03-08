@@ -123,13 +123,13 @@ Style the trophy
   height: 3em;
   width: 15em;
 }
-.playerWins{
+.plWin{
   display: none;
 }
-.computerWins{
+.coWin{
   display: none;
 }
-.noWinner{
+.noWin{
   display: none;
 }
 
